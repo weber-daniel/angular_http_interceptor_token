@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getImageUrlSource(): string {
-    return './assets/images/source.jpg';
+    return './assets/images/source.jpeg';
   }
 
   getPostList() {
