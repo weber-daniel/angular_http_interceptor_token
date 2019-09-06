@@ -1,0 +1,133 @@
+<div class="dashboard-wrapper">
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Dashboard - HTTP Interceptor Example</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+
+  <div class="card-area">
+
+    <div class="card-deck">
+
+      <div class="card">
+
+        <div class="card-header">
+          <h3 class="text-center bg-primary text-white">All Posts</h3>
+        </div>
+
+        <div class="card-body overflow-auto">
+          <div class="card-image mb-4">
+            <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
+          </div>
+          <div class="card-text">
+            <p *ngIf="!postList$">Click to load data...</p>
+            <p *ngIf="postList$">{{ postList$ | async | json  }}</p>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button type="button" class="btn btn-primary btn-block"
+                  (click)="getPostList()">Get Posts</button>
+        </div>
+
+      </div> <!-- card end -->
+
+      <div class="card">
+
+        <div class="card-header">
+          <h3 class="text-center bg-secondary text-white">All Comments</h3>
+        </div>
+
+        <div class="card-body overflow-auto">
+          <div class="card-image mb-4">
+            <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
+          </div>
+          <div class="card-text">
+            <p *ngIf="!commentList$">Click to load data...</p>
+            <p *ngIf="commentList$">{{ commentList$ | async | json }}</p>
+          </div>
+        </div>
+
+        <div class="card-footer overflow-auto">
+          <button type="button" class="btn btn-secondary btn-block"
+                  (click)="getCommentList()">Get Comments</button>
+        </div>
+
+      </div> <!-- card end -->
+
+      <div class="card">
+
+        <div class="card-header">
+          <h3 class="text-center bg-success text-white">All Albums</h3>
+        </div>
+
+        <div class="card-body overflow-auto">
+          <div class="card-image mb-4">
+            <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
+          </div>
+          <div class="card-text">
+            <p *ngIf="!albumList$">Click to load data...</p>
+            <p *ngIf="albumList$">{{ albumList$ | async | json }}</p>
+          </div>
+        </div>
+
+        <div class="card-footer overflow-auto">
+          <button type="button" class="btn btn-success btn-block"
+                  (click)="getAlbumList()">Get Albums</button>
+        </div>
+
+      </div> <!-- card end -->
+
+      <div class="card">
+
+        <div class="card-header">
+          <h3 class="text-center bg-info text-white">All ToDos</h3>
+        </div>
+
+        <div class="card-body overflow-auto">
+          <div class="card-image mb-4">
+            <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
+          </div>
+          <div class="card-text">
+            <p *ngIf="!toDoList$">Click to load data...</p>
+            <p *ngIf="toDoList$">{{ toDoList$ | async | json  }}</p>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button type="button" class="btn btn-info btn-block"
+                  (click)="getTodoList()">Get ToDos</button>
+        </div>
+
+      </div> <!-- card end -->
+
+      <div class="card">
+
+        <div class="card-header">
+          <h3 class="text-center bg-warning text-white">All Photos</h3>
+        </div>
+
+        <div class="card-body overflow-auto">
+          <div class="card-image mb-4">
+            <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
+          </div>
+          <div class="card-text">
+            <p *ngIf="!photoList$">Click to load data...</p>
+            <p *ngIf="photoList$">{{ photoList$ | async | json  }}</p>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button type="button" class="btn btn-warning btn-block"
+                  (click)="getPhotoList()">Get Photos</button>
+        </div>
+
+      </div> <!-- card end -->
+
+    </div> <!-- card group end -->
+
+  </div> <!-- card area end -->
+
+</div>

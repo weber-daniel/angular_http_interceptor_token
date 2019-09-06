@@ -2,8 +2,27 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const BACKEND_URL = 'https://jsonplaceholder.typicode.com';
+
 export const environment = {
-  production: false
+  production: false,
+  tokenKey: 'STORE_TOKEN_APP_KEY',
+  fakeTokenValue: 'FAKE_TOKEN_443e4tgf4t3e4g4g34534s34',
+  endpoints: {
+    user: {
+      getUserList: `${BACKEND_URL}/users`,
+      addUser: `${BACKEND_URL}/users`,
+      editUser: `${BACKEND_URL}/users`,
+      deleteUser: `${BACKEND_URL}/users`
+    },
+    fakeRest: {
+      getPostList: `${BACKEND_URL}/posts`,
+      getCommentList: `${BACKEND_URL}/comments`,
+      getAlbumList: `${BACKEND_URL}/albums`,
+      getTodoList: `${BACKEND_URL}/todos`,
+      getPhotoList: `${BACKEND_URL}/photos`,
+    }
+  }
 };
 
 /*
