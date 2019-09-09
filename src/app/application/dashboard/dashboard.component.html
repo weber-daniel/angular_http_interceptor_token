@@ -3,7 +3,10 @@
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4">Dashboard - HTTP Interceptor Example</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <p class="lead">
+        This is some basic angular http interceptor example -
+        just for some test cases with a json fake token
+      </p>
     </div>
   </div>
 
@@ -21,7 +24,8 @@
           <div class="card-image mb-4">
             <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
           </div>
-          <div class="card-text">
+
+          <div class="card-text text-center">
             <p *ngIf="!postList$">Click to load data...</p>
             <p *ngIf="postList$">{{ postList$ | async | json  }}</p>
           </div>
@@ -44,7 +48,7 @@
           <div class="card-image mb-4">
             <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
           </div>
-          <div class="card-text">
+          <div class="card-text text-center">
             <p *ngIf="!commentList$">Click to load data...</p>
             <p *ngIf="commentList$">{{ commentList$ | async | json }}</p>
           </div>
@@ -67,7 +71,7 @@
           <div class="card-image mb-4">
             <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
           </div>
-          <div class="card-text">
+          <div class="card-text text-center">
             <p *ngIf="!albumList$">Click to load data...</p>
             <p *ngIf="albumList$">{{ albumList$ | async | json }}</p>
           </div>
@@ -90,7 +94,7 @@
           <div class="card-image mb-4">
             <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
           </div>
-          <div class="card-text">
+          <div class="card-text text-center">
             <p *ngIf="!toDoList$">Click to load data...</p>
             <p *ngIf="toDoList$">{{ toDoList$ | async | json  }}</p>
           </div>
@@ -113,7 +117,7 @@
           <div class="card-image mb-4">
             <img src="{{ getImageUrlSource() }}" alt="Source" class="img-thumbnail"/>
           </div>
-          <div class="card-text">
+          <div class="card-text text-center">
             <p *ngIf="!photoList$">Click to load data...</p>
             <p *ngIf="photoList$">{{ photoList$ | async | json  }}</p>
           </div>

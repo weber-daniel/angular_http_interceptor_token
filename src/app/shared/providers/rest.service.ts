@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {Post} from '../models/post';
 import {Album} from '../models/album';
 import {ToDo} from '../models/to-do';
 import {Photo} from '../models/photo';
 import {environment} from '../../../environments/environment';
+import {delay, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +48,14 @@ export class RestService {
    */
   getPhotoList(): Observable<Photo[]> {
     return this.http.get<Photo[]>(environment.endpoints.fakeRest.getPhotoList);
+  }
+
+  getTokenFakeBackend(): Observable<string> {
+    return of(environment.fakeTokenValue)
+      .pipe(
+        tap(() => console.log('Before Fake Delay')),
+        delay(5000),
+        tap(() => console.log('After Fake Delay'))
+      );
   }
 }

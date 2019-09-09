@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {TokenService} from './shared/providers/token.service';
 import {environment} from '../environments/environment';
+import {RestService} from './shared/providers/rest.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,16 @@ import {environment} from '../environments/environment';
 })
 export class AppComponent {
 
-  FAKE_TOKEN = environment.fakeTokenValue;
+  constructor(private tokenService: TokenService, private restService: RestService) {
 
-  constructor(private tokenService: TokenService) {
-    this.tokenService.setToken(this.FAKE_TOKEN);
+    this.restService.getTokenFakeBackend()
+      .subscribe(token => this.tokenService.authToken = token);
+
+    // Get Token from Server later
+    // const authToken: string = environment.fakeTokenValue;
+
+    // this.tokenService.authToken = authToken;
+
   }
 
 }

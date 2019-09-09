@@ -10,16 +10,17 @@ export class HeaderInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const token = this.tokenService.getToken();
+    if (!this.tokenService.authToken) {
+      return next.handle(req);
+    }
+
+    const token = this.tokenService.authToken;
 
     req = req.clone({
       setHeaders: {
         Authorization: token
       }
     });
-
-    console.log('HeaderInterceptor called');
-    console.log(req);
 
     return next.handle(req);
   }
